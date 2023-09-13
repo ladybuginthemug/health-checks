@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# diskspace--Summarizes available disk space and presents it in a logical
-#   and readable fashion.
-
 tempfile="/tmp/available.$$"
 
 trap "rm -f $tempfile" EXIT
