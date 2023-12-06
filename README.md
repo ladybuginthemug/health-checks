@@ -3,35 +3,35 @@
 This repo will be populated with lots of fancy checks.
 
 
-### health-checks
-```
-./checks.sh help
+health-checks
+---
+---
+`./checks.sh help`
 
+
+```
 Usage: ./checks.sh [help|iam|resources|network|logs|security]
-
 ```
-
+---
+`./checks.sh network`
 ```
-./checks.sh network
-
 =======NETWORK INFORMATION==============================================================================================
 1: lo: 
   
 2: enp2s0: 
  
 =======OPEN PORTS=======================================================================================================
-
 Netid                State            Recv-Q           Send-Q           Local Address:Port           Peer Address:Port                                  
 udp                  UNCONN                0                0                                                                           
 tcp                  LISTEN                0                0                                        
 
 =======EST CONNECTIONS==================================================================================================
-
 State                Recv-Q           Send-Q           Local Address:Port           Peer Address:Port           Process                                            
 CLOSE-WAIT           0                0                                                                                                                                               
 ESTAB                0                0     
                                                                                         
 =======SURICATA LOGS====================================================================================================
+
 
 =======DOCKER INFORMATION===============================================================================================
 Client: Docker Engine 
@@ -39,13 +39,16 @@ Client: Docker Engine
 
 =======RUNNING CONTAINERS===============================================================================================
 
+
 =======VIRTUAL MACHINES=================================================================================================
 
 ```
+Note: Uncomment or change log location in the `checks.sh` to your suricata/snort log files if needed 
 
+
+---
+`./checks.sh resources`
 ```
-./checks.sh resources
-
 =======SYSTEM UPTIME===============================================================
  09:26:08 up 1 days, 13:30,  0 users,  load average: 1.25, 1.52, 1.31
 
@@ -61,26 +64,27 @@ Swap:
 Filesystem      Size  Used Avail Use% Mounted on
 
 ```
+---
 
+`./checks.sh iam`
 ```
-./checks.sh iam
-
 =======IAM USER LIST================
+
 
 =======IAM GROUP LIST===============
 
+
 =======USERS WITH SUDO ACCESS=======
 ``` 
-
+---
+`./checks.sh logs`
 ```
-./checks.sh logs
-
 ========/var/log/*.log==============
 ```
+---
 
+`./checks.sh security`
 ```
-./checks.sh security
-
 =========RUNNING SERVICES=====================
 *.service        loaded  active
 
@@ -90,6 +94,5 @@ Filesystem      Size  Used Avail Use% Mounted on
 =========ROOTKIT CHECK========================
 You must be the root user to run this program.
 
-
 ```
-
+Note: in oder to run `rootkit check` you need to pre-install `rkhunter` dependency ( optionally )
